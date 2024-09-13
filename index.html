@@ -3,75 +3,74 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mapa centrado</title>
-    <style>
-        body {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            height: 100vh;
-            margin: 0;
-            background-color: black;
-        }
-        #container1 {
-            width: 700px;
-            height: 700px;
-        }
-        p {
-            color: white;
-            font-size: 1.5rem;
-            font-weight: bold;
-            text-align: center;
-            margin-top: 20px;
-        }
-        a {
-            color: #D1D6DE; /* Ajusta el color del enlace */
-            text-decoration: none;
-        }
-        a:hover {
-            text-decoration: underline;
-        }
-    </style>
+    <title>Document</title>
 </head>
-<body>
+<body class="bodi" style="background-color: black; align-items: center; justify-content: center;">
     <script src="d3.v3.min.js"></script>
     <script src="topojson.v1.min.js"></script>
+    <!-- I recommend you host this file on your own, since this will change without warning -->
     <script src="datamaps.world.min.js"></script>
-
-    <div id="container1"></div>
     
-    <p>Interés de Búsqueda "AppSheet" por zona 
-        <a href="https://trends.google.es/trends/explore?date=2016-01-01%202024-09-13&gprop=youtube&q=Appsheet&hl=es">
-            En Youtube
-        </a>
-    </p>
-    
-    <svg xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink">
-        <!-- Definiciones de patrones -->
-        <defs>
-            <pattern id="horizontal-stripe" width="4" height="4" patternUnits="userSpaceOnUse">
-                <line x1="0" y1="2" x2="4" y2="2" stroke="blue" />
-            </pattern>
-            <pattern id="vertical-stripe" width="4" height="4" patternUnits="userSpaceOnUse">
-                <line x1="2" y1="0" x2="2" y2="4" stroke="green" />
-            </pattern>
-            <pattern id="diagonal-stripe" patternTransform="rotate(45)" width="4" height="4" patternUnits="userSpaceOnUse">
-                <line x1="2" y1="0" x2="2" y2="4" stroke="#bada55" stroke-width="2" />
-            </pattern>
-            <pattern id="circles" width="4" height="4" patternUnits="userSpaceOnUse">
-                <circle cx="2.5" cy="2.5" r="1.3" fill="green" />
-            </pattern>
-            <linearGradient id="gradient">
-                <stop offset="5%" stop-color="#F60" />
-                <stop offset="95%" stop-color="#FF6" />
-            </linearGradient>
-            <pattern id="triangle" width="8" height="8" patternUnits="userSpaceOnUse">
-                <polygon points="3,0 6,6 0,6" fill="purple"/>
-            </pattern>
-        </defs>
-    </svg>
-    <script>
+    <div id="container1" style="position: relative; width: 700px; height: 700px;"></div>
+    <p style="color: white;">Interés de Búsqueda "AppSheet" por zona <a href="https://trends.google.es/trends/explore?date=2016-01-01%202024-09-13&gprop=youtube&q=Appsheet&hl=es" style="color: white;">En Youtube</a></p>
+    <!-- Add as many pattern definitions (defs) as you'd like, make sure to include an ID -->
+  <svg xmlns="http://www.w3.org/2000/svg" version="1.1"
+       xmlns:xlink="http://www.w3.org/1999/xlink">
+  
+         
+      <!-- Horizontal Stripe pattern -->
+      <defs>
+          <pattern id="horizontal-stripe"
+                   width="4" height="4"
+                   patternUnits="userSpaceOnUse">
+               <line x1="0" y1="2" x2="4" y2="2" stroke="blue" />
+          </pattern>
+      </defs>
+         
+         
+        <!-- Vertical Stripe pattern -->   
+      <defs>
+          <pattern id="vertical-stripe"
+                   width="4" height="4"
+                   patternUnits="userSpaceOnUse">
+               <line x1="2" y1="0" x2="2" y2="4" stroke="green" />
+          </pattern>
+      </defs>
+      
+       <!-- Diagonal Stripe pattern -->
+      <defs>
+          <pattern id="diagonal-stripe"
+                   patternTransform="rotate(45)"
+                   width="4" height="4"
+                   patternUnits="userSpaceOnUse">
+               <line x1="2" y1="0" x2="2" y2="4" stroke="#bada55" stroke-width="2" />
+          </pattern>
+      </defs>
+  
+        <!-- Circles pattern --> 
+      <defs>
+          <pattern id="circles"
+                   width="4" height="4"
+                   patternUnits="userSpaceOnUse">
+                     <circle cx="2.5" cy="2.5" r="1.3" fill="green" />
+        </pattern>
+      </defs>
+        
+         <!-- Gradient pattern. Wouldn't really recommend this one. -->
+       <linearGradient id="gradient">
+          <stop offset="5%" stop-color="#F60" />
+          <stop offset="95%" stop-color="#FF6" />
+       </linearGradient>
+         
+       <!-- Triangles pattern -->  
+       <pattern id="triangle"
+         width="8" height="8"
+         patternUnits="userSpaceOnUse">
+           <polygon points="3,0 6,6 0,6" fill="purple"/>
+        </pattern>
+  </svg>
+       
+       <script>
         var election = new Datamap({
           scope: 'world',
           element: document.getElementById('container1'),
@@ -156,5 +155,5 @@ data: {
 
         })
        </script>
-</body>
+  </body>
 </html>
