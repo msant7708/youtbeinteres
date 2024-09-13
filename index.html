@@ -5,48 +5,46 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mapa centrado</title>
     <style>
-        body {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            max-width: 800px;
-            max-height: 900px;
-            margin: auto; 
-            background-color: #191919;
-        }
-        #container1 {
-            width: 700px;
-            height: 700px;
-        }
-        p {
-            color: white;
-            font-size: 1.5rem;
-            font-weight: bold;
-            text-align: center;
-            margin-top: 20px;
-        }
-        a {
-            color: #D1D6DE; /* Ajusta el color del enlace */
-            text-decoration: none;
-        }
-        a:hover {
-            text-decoration: underline;
-        }
+   body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start; /* Alinea el contenido en la parte superior */
+    width: 800px;
+    height: 900px; /* Establece la altura fija de 900px */
+    margin: 0; 
+    overflow: hidden; /* Oculta cualquier desbordamiento */
+    background-color: #191919;
+}
+
+#container1 {
+    width: 700px;
+    height: 700px;
+}
+
+
+
+
+a {
+    color: #D1D6DE; /* Ajusta el color del enlace */
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+
     </style>
 </head>
 <body>
-    <script src="d3.v3.min.js"></script>
-    <script src="topojson.v1.min.js"></script>
-    <script src="datamaps.world.min.js"></script>
+    <script src="https://msant7708.github.io/youtbeinteres/d3.v3.min.js"></script>
+    <script src="https://msant7708.github.io/youtbeinteres/topojson.v1.min.js"></script>
+    <script src="https://msant7708.github.io/youtbeinteres/datamaps.world.min.js"></script>
 
     <div id="container1"></div>
     
-    <p>Interés de Búsqueda "AppSheet" por zona 
-        <a href="https://trends.google.es/trends/explore?date=2016-01-01%202024-09-13&gprop=youtube&q=Appsheet&hl=es">
-            En Youtube
-        </a>
-    </p>
+
     
     <svg xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink">
         <!-- Definiciones de patrones -->
